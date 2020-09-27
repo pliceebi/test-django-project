@@ -1,0 +1,25 @@
+{% extends "my_site/base.html "%}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/users.css' %}">
+    <div class="form-div">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+        <form method="POST" >
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div>
+                <button type="submit"> Войти </button>
+            </div>
+        </form>
+        <div>
+            Нет аккаунта? <a href="{% url 'register' %}"> Зарегистрироваться </a>
+        </div>
+    </div>
+{% endblock content %}

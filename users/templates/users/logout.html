@@ -1,0 +1,8 @@
+{% extends "my_site/base.html "%}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'users/users.css' %}">
+<div class="form-div">
+    Вы вышли из аккаунта <br/> <a href="{% url 'login' %}" > Войти заново </a>
+</div>
+{% endblock content %}
