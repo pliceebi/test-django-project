@@ -23,14 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-with open('variables.txt') as f:
-    lines = f.read().splitlines()
 
-SECRET_KEY = lines[0]
+SECRET_KEY = os.environ.get("TEST_DJANGO_APP_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-
-DEBUG = (lines[1] == 'True')
+DEBUG = (os.environ.get("DEBUG_VALUE") == 'True')
 
 ALLOWED_HOSTS = ['testdjangoappamir.herokuapp.com']
 
