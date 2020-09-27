@@ -28,7 +28,8 @@ SECRET_KEY = os.environ.get('TEST_DJANGO_APP_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True ')
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = True
 
 ALLOWED_HOSTS = ['testdjangoappamir.herokuapp.com']
 
